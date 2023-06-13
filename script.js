@@ -43,7 +43,7 @@ button.addEventListener("click", () => {
   }
   if (k === word.length) {
     image.src = `./Images/Faze ${currentPhoto}.png`;
-    if (currentPhoto < 8) {
+    if (currentPhoto < 7) {
       currentPhoto++;
     }
   }
