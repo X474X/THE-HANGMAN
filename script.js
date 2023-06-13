@@ -5,6 +5,15 @@ const randomWords = [
   "stilou",
   "osos",
   "Pneumonoultramicroscopicsilicovolcaniconioza",
+  "Zbor",
+  "val",
+  "tabara",
+  "drum",
+  "norocel",
+  "floare",
+  "piatră",
+  "lac",
+  "vis",
 ];
 const word = randomWords[Math.floor(Math.random() * 6)];
 
