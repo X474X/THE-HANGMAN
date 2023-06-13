@@ -1,10 +1,20 @@
-const word = "masa";
+const randomWords = [
+  "masa",
+  "astronaut",
+  "belgia",
+  "stilou",
+  "osos",
+  "Pneumonoultramicroscopicsilicovolcaniconioza",
+];
+const word = randomWords[Math.floor(Math.random() * 6)];
+
 const wrapper = document.querySelector(".word-wrapper");
 const input = document.querySelector("input");
 const button = document.querySelector("button");
 const image = document.querySelector("img");
 let words = [];
 let currentPhoto = 2;
+let win = 0;
 
 for (let i = 0; i < word.length; i++) {
   let cuvant = document.createElement("span");
@@ -14,9 +24,11 @@ for (let i = 0; i < word.length; i++) {
 
 button.addEventListener("click", () => {
   let k = 0;
+
   for (let i = 0; i < word.length; i++) {
     if (input.value === word[i]) {
       words[i].innerHTML = input.value;
+      win++;
     }
     if (
       input.value !== word[i] &&
@@ -26,10 +38,12 @@ button.addEventListener("click", () => {
       k++;
     }
   }
-
+  if (win === word.length) {
+    image.src = "./Images/WIN.png";
+  }
   if (k === word.length) {
     image.src = `./Images/Faze ${currentPhoto}.png`;
-    if (currentPhoto < 7) {
+    if (currentPhoto < 8) {
       currentPhoto++;
     }
   }
